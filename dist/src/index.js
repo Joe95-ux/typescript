@@ -18,6 +18,8 @@ class Member {
         this.email = email;
         this.name = name;
         this._courseCount = 1;
+        this.courseModule = 3;
+        // protected variable are accessible in parent and children classes
         this.city = "Yaounde";
     }
     get getEmail() {
@@ -36,5 +38,14 @@ class Member {
     // private methods
     deleteToken() {
         console.log("token deleted");
+    }
+}
+class BranchMember extends Member {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseModule() {
+        this.courseModule = 3;
     }
 }

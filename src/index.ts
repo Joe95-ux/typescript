@@ -20,6 +20,8 @@ const tabi = new Student("Joe@gmail.com", "Joe");
 
 class Member{
     private _courseCount = 1
+    protected courseModule = 3
+    // protected variable are accessible in parent and children classes
     readonly city:string = "Yaounde";
     constructor(public email:string, public name: string){
 
@@ -44,6 +46,15 @@ class Member{
     private deleteToken(){
         console.log("token deleted");
     }
+
+}
+
+class BranchMember extends Member{
+       isFamily: boolean = true
+       changeCourseModule(){
+        this.courseModule = 3;
+
+       }
 
 }
 
